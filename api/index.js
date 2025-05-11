@@ -6,8 +6,6 @@ const cors = require("cors");
 const userRouter = require("../Routers/userRouter");
 const contactRouter = require("../Routers/contactRouter");
 const workoutRouter = require("../Routers/workoutRouter");
-const nutriantRouter = require("../Routers/nutriantRouter");
-const errorHandler = require("../Middlewares/errorMiddleware");
 const corOptions = {
   origin: "http://localhost:5173",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -15,14 +13,12 @@ const corOptions = {
   allowedHeaders: ["Content-Type", "Authorization"],
   optionsSuccessStatus: 200,
 };
-Port = process.env.PORT || 5000;
-
+Port = 3000;
+app.get("/", (req, res) => res.send("Express on Vercel"));
 app.use(cors(corOptions));
 app.use(express.json());
-app.use(errorHandler);
 app.use("/api/user", userRouter);
 app.use("/api", contactRouter);
-app.use("/api/nutriant", nutriantRouter);
 app.use("/api/workouts", workoutRouter);
 
 connectDB()
