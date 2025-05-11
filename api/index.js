@@ -23,7 +23,7 @@ app.use("/api/workouts", workoutRouter);
 
 connectDB()
   .then(() => {
-    app.listen(Port, () => {
+    app.listen(PORT, () => {
       console.log(`Server is running on port ${Port}`);
     });
   })
