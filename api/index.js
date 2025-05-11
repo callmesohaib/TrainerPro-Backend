@@ -7,7 +7,7 @@ const userRouter = require("../Routers/userRouter");
 const contactRouter = require("../Routers/contactRouter");
 const workoutRouter = require("../Routers/workoutRouter");
 const corOptions = {
-  origin: "https://trainer-pro-frontend.vercel.app/",
+  origin: "https://trainer-pro-frontend.vercel.app",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"],
