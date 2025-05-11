@@ -13,7 +13,7 @@ const corOptions = {
   allowedHeaders: ["Content-Type", "Authorization"],
   optionsSuccessStatus: 200,
 };
-Port = 3000;
+const PORT = process.env.PORT || 3000;
 app.get("/", (req, res) => res.send("Express on Vercel"));
 app.use(cors(corOptions));
 app.use(express.json());
