@@ -8,6 +8,7 @@ const contactRouter = require("../Routers/contactRouter");
 const workoutRouter = require("../Routers/workoutRouter");
 const corOptions = {
   origin: "https://trainer-pro.vercel.app",
+  // origin: "http://localhost:5173",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"],
@@ -24,7 +25,7 @@ app.use("/api/workouts", workoutRouter);
 connectDB()
   .then(() => {
     app.listen(PORT, () => {
-      console.log(`Server is running on port ${Port}`);
+      console.log(`Server is running on port ${PORT}`);
     });
   })
   .catch((error) => {
